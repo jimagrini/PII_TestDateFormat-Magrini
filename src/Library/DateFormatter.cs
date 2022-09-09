@@ -22,7 +22,7 @@ public class DateFormatter
         }
         else
         {
-            if(date.Length>10 || date.Length<10)
+            if(date.Length>10 || date.Length<10 || !(date.Contains("/")))
             {
                 return ("Formato de fecha invalido").ToString(); 
             }

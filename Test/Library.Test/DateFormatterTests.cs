@@ -33,14 +33,17 @@ public class Tests
 
         string testDate5 = DateFormatter.ChangeFormat("aa/bb/cd");
 
-        string testDate6 = DateFormatter.ChangeFormat("");
+        string testDate6 = DateFormatter.ChangeFormat("12-10-1997");
+        
+        string testDate7 = DateFormatter.ChangeFormat("");
 
         Assert.AreEqual(testDate1,expected);
         Assert.AreEqual(testDate2,expected);
         Assert.AreEqual(testDate3,expected);
         Assert.AreEqual(testDate4,expected);
         Assert.AreEqual(testDate5,expected);
-        Assert.AreEqual(testDate6,emptyExpected);
+        Assert.AreEqual(testDate6,expected);
+        Assert.AreEqual(testDate7,emptyExpected);
 
     }
 }
