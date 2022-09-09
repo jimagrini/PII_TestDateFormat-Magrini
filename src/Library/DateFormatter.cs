@@ -15,6 +15,9 @@ public class DateFormatter
     /// <returns>La fecha convertida al formato "yyyy-mm-dd".</returns>
     public static string ChangeFormat(string date)
     {
+        ArrayList monthsWith31Days= new ArrayList(){01,03,05,07,08,10,12};
+
+        ArrayList monthsWith30Days= new ArrayList(){04,06,09,11};
    
         if (String.IsNullOrEmpty(date))
         {
@@ -50,8 +53,22 @@ public class DateFormatter
                     }
                     else
                     {
-                        string dateOutput = date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
-                        return dateOutput;
+                        if(monthsWith30Days.Contains(monthNumber))
+                        {
+                            if(dayNumber>30)
+                            {
+                                return ("Formato de fecha invalido").ToString();
+                            }
+                        }
+                        if(monthNumber==02 && dayNumber>28)
+                        {
+                            return ("Formato de fecha invalido").ToString();   
+                        }
+                        else
+                        {
+                            string dateOutput = date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+                            return dateOutput;
+                        }
                     }
                 }
             }

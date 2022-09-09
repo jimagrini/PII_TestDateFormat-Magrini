@@ -37,6 +37,10 @@ public class Tests
         
         string testDate7 = DateFormatter.ChangeFormat("");
 
+        string testDate8 = DateFormatter.ChangeFormat("30/02/2007");
+
+        string testDate9 = DateFormatter.ChangeFormat("31/04/2005");
+
         Assert.AreEqual(testDate1,expected);
         Assert.AreEqual(testDate2,expected);
         Assert.AreEqual(testDate3,expected);
@@ -44,6 +48,8 @@ public class Tests
         Assert.AreEqual(testDate5,expected);
         Assert.AreEqual(testDate6,expected);
         Assert.AreEqual(testDate7,emptyExpected);
+        Assert.AreEqual(testDate8,expected);
+        Assert.AreEqual(testDate9,expected);
 
     }
 }
