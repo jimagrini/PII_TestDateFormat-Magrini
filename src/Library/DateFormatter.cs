@@ -60,7 +60,7 @@ public class DateFormatter
                                 return ("Formato de fecha invalido").ToString();
                             }
                         }
-                        if(monthNumber==02 && dayNumber>28)
+                        if(monthNumber==02 && dayNumber>29)
                         {
                             return ("Formato de fecha invalido").ToString();   
                         }
