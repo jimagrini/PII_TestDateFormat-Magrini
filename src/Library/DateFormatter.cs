@@ -55,16 +55,9 @@ public class DateFormatter
                     }
                     else
                     {
-                        if(monthsWith30Days.Contains(monthNumber))
+                        if( (monthsWith30Days.Contains(monthNumber) && dayNumber>30) || (monthNumber==02 && dayNumber>29) )
                         {
-                            if(dayNumber>30)
-                            {
-                                return ("Formato de fecha invalido").ToString();
-                            }
-                        }
-                        if(monthNumber==02 && dayNumber>29)
-                        {
-                            return ("Formato de fecha invalido").ToString();   
+                            return ("Formato de fecha invalido").ToString();
                         }
                         else
                         {
