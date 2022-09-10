@@ -1,5 +1,6 @@
 ﻿namespace TestDateFormat;
 using System.Collections;
+using System.Linq;
 /// <summary>
 /// Esta clase implementa la funcionalidad de cambiar el formato de una fecha.
 /// </summary>
@@ -33,7 +34,8 @@ public class DateFormatter
             {
                 int index1Slash= date.IndexOf("/",2);
                 int index2Slash= date.IndexOf("/",3);
-                if(index1Slash != 2 || index2Slash !=5 || date.Any(letter=> char.IsLetter(letter))==true)
+                int amountOfSlashs=date.Count(character => character == '/');
+                if(index1Slash != 2 || index2Slash !=5 || amountOfSlashs>2 || date.Any(letter=> char.IsLetter(letter))==true)
                 {
                     return ("Formato de fecha invalido").ToString(); 
                 }
