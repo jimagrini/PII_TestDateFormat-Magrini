@@ -35,7 +35,7 @@ public class DateFormatter
                 int index1Slash= date.IndexOf("/",2);
                 int index2Slash= date.IndexOf("/",3);
                 int amountOfSlashs=date.Count(character => character == '/');
-                if(index1Slash != 2 || index2Slash !=5 || amountOfSlashs>2 || date.Any(letter=> char.IsLetter(letter))==true)
+                if(index1Slash != 2 || index2Slash !=5 || amountOfSlashs!=2 || date.Any(letter=> char.IsLetter(letter))==true)
                 {
                     return ("Formato de fecha invalido").ToString(); 
                 }
